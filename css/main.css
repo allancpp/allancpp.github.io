@@ -1,0 +1,21 @@
+:root
+{
+    --bg-color:#f5f500;
+    --main-font-color:#333;
+}
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo padrão */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: var(--bg-color);
+    color: var(--main-font-color);
+    line-height: 1.6;
+    padding: 20px;
+}
