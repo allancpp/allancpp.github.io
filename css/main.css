@@ -154,7 +154,6 @@ footer
 	border-top: var(--border-box-color);
 	background: var(--dark-coffee);
     text-align: center;
-    overflow-x: hidden;
 }
 
 
