@@ -1,8 +1,18 @@
 @media (max-width: 575.98px)
 {
+    section.projects,
+    section.education,
+    section.idioms,
+    section.courses,
+    section.technologies,
+    footer
+    {
+        padding: 10vh 5vw;
+    }
+    
     .g-two-col {
         display: grid;
-        grid-template-columns: 60vw;
+        grid-template-columns: 90vw;
         grid-template-rows: 1fr;
         grid-gap:4vw;
         justify-content: center;
@@ -10,11 +20,12 @@
     
     .education .g-two-col {
         display: grid;
-        grid-template-columns: 37vw 37vw;
+        grid-template-columns: 45vw 45vw;
         grid-template-rows: 1fr;
-        grid-gap:3vw;
+        grid-gap: 2vw;
         justify-content: center;
     }
+
 }
 @media (min-width: 576px) and (max-width: 767.98px)
 {
