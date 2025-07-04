@@ -1,21 +1,283 @@
-:root
+:root 
 {
-    --bg-color:#f5f500;
-    --main-font-color:#333;
+	--base-color: #f3f2f2;
+	--base-color-alt: #222;
+	--stage-color: #fff;
+	--stage-color-alt: #333;
+    --headers-color: #ccbf9f;
+    --dark-coffee:#362702;
+    --dark-light-coffee:#a17648;
+    
+    --border-box-color:1px solid #eee;
 }
-/* Reset básico */
-* {
-    margin: 0;
+
+*
+{
     padding: 0;
+    margin:0;
     box-sizing: border-box;
 }
 
-/* Estilo padrão */
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    background-color: var(--bg-color);
-    color: var(--main-font-color);
-    line-height: 1.6;
-    padding: 20px;
+html
+{
+    scroll-behavior: smooth;
+}
+
+body 
+{
+    font-family: 'Inter', sans-serif;
+	font-size: 1.2rem;
+	line-height: 1;
+    background:  var(--dark-coffee);
+    overflow-x: hidden;
+}
+
+
+h1 
+{ 
+    font-size:4.0625rem;
+    margin-left: -2px;
+	margin-bottom: 20px;
+}
+
+h2 
+{ 
+    font-size:2.8125rem;
+}
+
+section h2 
+{
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+h3 
+{ 
+    font-size:2.1875rem;
+}
+
+h4 
+{ 
+    font-size:1.5625rem;
+}
+
+h1, h2, h3, h4, h5, h6, blockquote
+{
+	color: var(--headers-color);
+  	font-style: normal;
+  	font-weight: 600;
+}
+
+ol, ul 
+{ 
+    list-style: none
+}
+
+blockquote, q 
+{ 
+    quotes: none
+}
+
+blockquote {
+    font-size: 2.7rem;
+    margin-top: 20px;	
+    line-height: 1.5em;
+}
+
+article
+{
+    max-width: 1920px;
+    max-height: 1080px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    
+}
+
+article div
+{
+    padding: 20px 0;
+}
+
+
+article div p {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-size: .7em;
+	color: #a17648;
+}
+
+article picture img 
+{
+    width: 100%;
+    height: auto;
+}
+
+
+.g-two-col {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+	grid-gap:4rem
+}
+
+.g-three-col {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	grid-gap:2rem
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+section.projects,
+section.education,
+section.idioms,
+section.courses,
+section.technologies,
+footer
+{
+	padding: 10vh 10vw;
+	border-top: var(--border-box-color);
+	background: var(--dark-coffee);
+    text-align: center;
+}
+
+
+
+.subtext 
+{
+    font-size: 1.1em;
+    line-height: 1.2em;
+	text-align:center;
+	max-width:600px;
+	margin:0 auto 4vh;
+	padding: 10px;
+	
+    color: var(--dark-light-coffee);
+}
+
+.tools-list li,
+.courses-list li 
+{
+    border-radius: 5px;
+    border: var(--border-box-color);
+    background-color: var(--headers-color);
+}
+
+.tools-list li
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    align-items: center;
+}
+
+.tools-list img
+{
+	height: 55px;
+	width: auto;
+}
+
+
+.courses-list li 
+{
+    padding: 1rem;
+    font-size: .8em;
+    text-align: center;
+    align-content: center;
+    max-width: 250px;
+}
+
+
+
+
+.projects img{
+    object-fit: cover;
+    object-position: top;
+}
+
+.languages,
+.certificates {
+    margin-top: 5rem;
+}
+
+.certificates .icon img {
+  width: 150px; 
+  height: auto;
+}
+
+.languages .content h4,
+.certificates .content h4{
+  margin: 1rem 0;
+}
+
+.languages .content p,
+.certificates .content p {
+
+    font-size: .7em;
+    color: #a17648;
+}
+
+.languages .flag img {
+  width: 50px; 
+  height: auto;
+}
+
+
+
+
+.scroller{
+    max-width: 1024px;
+    margin: auto;
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller .scroller-right,
+.scroller .scroller-left
+{
+    display: flex;
+    padding-block: 1rem;
+    gap: 1rem;
+    width: max-content;
+    flex-wrap: nowrap;
+}
+
+.scroller .scroller-left 
+{
+    animation: scrolling var(--_animation-duration, 40s) reverse linear infinite;
+}
+.scroller .scroller-right 
+{
+    animation: scrolling var(--_animation-duration, 40s) forwards linear infinite;
+}
+
+.scroller[data-speed="fast"] { --_animation-duration: 20s}
+.scroller[data-speed="slow"] { --_animation-duration: 40s}
+
+@keyframes scrolling {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-40%);
+    }
 }
