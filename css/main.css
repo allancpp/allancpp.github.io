@@ -42,6 +42,7 @@ h1
 h2 
 { 
     font-size:2.8125rem;
+    font-size: clamp(2.45rem, 3.5vw, 2.8125rem);
 }
 
 section h2 
@@ -57,7 +58,7 @@ h3
 
 h4 
 { 
-    font-size:1.5625rem;
+    font-size: clamp(1.2rem, 3.5vw, 1.5625rem);
 }
 
 h1, h2, h3, h4, h5, h6, blockquote
@@ -160,7 +161,7 @@ footer
 
 .subtext 
 {
-    font-size: 1.1em;
+    font-size: clamp(0.90rem, 3.2vw, 1.3125rem);
     line-height: 1.2em;
 	text-align:center;
 	max-width:600px;

@@ -1,0 +1,101 @@
+@media (max-width: 575.98px)
+{
+    .g-two-col {
+        display: grid;
+        grid-template-columns: 60vw;
+        grid-template-rows: 1fr;
+        grid-gap:4vw;
+        justify-content: center;
+    }
+    
+    .education .g-two-col {
+        display: grid;
+        grid-template-columns: 37vw 37vw;
+        grid-template-rows: 1fr;
+        grid-gap:3vw;
+        justify-content: center;
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px)
+{
+    .g-two-col {
+        display: grid;
+        grid-template-columns: 60vw;
+        grid-template-rows: 1fr;
+        grid-gap:4vw;
+        justify-content: center;
+    }
+    
+    .education .g-two-col {
+        display: grid;
+        grid-template-columns: 37vw 37vw;
+        grid-template-rows: 1fr;
+        grid-gap:3vw;
+        justify-content: center;
+    }
+}
+@media (min-width: 768px) and (max-width: 991.98px)
+{
+    .g-two-col {
+        display: grid;
+        grid-template-columns: 60vw;
+        grid-template-rows: 1fr;
+        grid-gap:4vw;
+        justify-content: center;
+    }
+    
+    .education .g-two-col {
+        display: grid;
+        grid-template-columns: 37vw 37vw;
+        grid-template-rows: 1fr;
+        grid-gap:2vw;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px)
+{
+    .g-two-col {
+        display: grid;
+        grid-template-columns: 60vw;
+        grid-template-rows: 1fr;
+        grid-gap:4vw;
+        justify-content: center;
+    }
+    
+    .education .g-two-col {
+        display: grid;
+        grid-template-columns: 37vw 37vw;
+        grid-template-rows: 1fr;
+        grid-gap:2vw;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px)
+{
+    .g-two-col {
+        display: grid;
+        grid-template-columns: 37vw 37vw;
+        grid-template-rows: 1fr;
+        grid-gap:4vw
+    }
+}
+
+@media (min-width: 1400px)
+{
+    .g-two-col {
+        display: grid;
+        grid-template-columns: 37vw 37vw;
+        grid-template-rows: 1fr;
+        grid-gap:4vw;
+    }
+    
+    .education .g-two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-gap:2vw;
+        justify-content: center;
+    }
+}
