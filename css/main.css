@@ -29,7 +29,6 @@ body
 	font-size: 1.2rem;
 	line-height: 1;
     background:  var(--dark-coffee);
-    overflow-x: hidden;
 }
 
 
@@ -155,6 +154,7 @@ footer
 	border-top: var(--border-box-color);
 	background: var(--dark-coffee);
     text-align: center;
+    overflow-x: hidden;
 }
 
 
