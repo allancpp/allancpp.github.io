@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <title>about me</title>
         
-        <link rel="stylesheet" type="text/css" href="./css/aos1.css">
+        <link rel="stylesheet" type="text/css" href="./css/aos.css">
         <link rel="stylesheet" type="text/css" href="./css/main.css">
         <link rel="stylesheet" type="text/css" href="./css/responsive.css">
         
@@ -28,6 +28,12 @@
     </head>
     
     <body>
+        <footer>
+            <div class="g-two-col">
+                <div></div>
+                <div></div>
+            </div>
+        </footer>
         <section class="projects" data-aos="fade-up">
             
             <h2 data-aos="fade-up">Projetos Criados</h2>
@@ -35,25 +41,36 @@
             <p class="subtext" data-aos="fade-up">Com mais de 15 anos de carreira, atuei na criação e sustentação de dezenas de projetos. </p>
             
             <div class="g-two-col">
-                
                 <article>
-                    <picture>
-                      <source media="(min-width: 1000px)" srcset="./img/projetos/portifolio_webcom_1024.jpg">
-                      <source media="(max-width: 999px)" srcset="./img/projetos/portifolio_webcom_1024.jpg">
-                      <img decoding="async" src="./img/projetos/portifolio_webcom_1024.jpg" loading="lazy" data-aos="zoom-in">
-                    </picture>
+                    <img 
+                        decoding="async"
+                        srcset="
+                              ./img/projetos/portifolio_loja_virtual_480.jpg 480w, 
+                              ./img/projetos/portifolio_loja_virtual_768.jpg 768w, 
+                              ./img/projetos/portifolio_loja_virtual_1024.jpg 1024w"
+                        src="./img/projetos/portifolio_loja_virtual_1024.jpg"
+                        sizes="(max-width: 575px) 480px, (max-width: 991px) 768px, 1200px"
+                        alt="E-commerce Granado"
+                        loading="lazy"
+                        data-aos="zoom-in">
                     <div>
-                        <h4 data-aos="fade-up">Sistema de Comissões</h4>
-                        <p data-aos="fade-up">Sistema Web / C# </p>
+                        <h4 data-aos="fade-up">E-commerce Granado</h4>
+                        <p data-aos="fade-up">Web / C# / Razor</p>
                     </div>
                 </article>
                 
                 <article>
-                    <picture>
-                      <source media="(min-width: 1000px)" srcset="./img/projetos/portifolio_mrs.png">
-                      <source media="(max-width: 999px)" srcset="./img/projetos/portifolio_mrs.png">
-                      <img decoding="async" src="./img/projetos/portifolio_mrs.png"  loading="lazy" data-aos="zoom-in">
-                    </picture>
+                    <img 
+                        decoding="async"
+                        srcset="
+                              ./img/projetos/portifolio_mrs_480.jpg 480w, 
+                              ./img/projetos/portifolio_mrs_768.jpg 768w, 
+                              ./img/projetos/portifolio_mrs_1024.jpg 1024w"
+                        src="./img/projetos/portifolio_mrs_1024.jpg"
+                        sizes="(max-width: 575px) 480px, (max-width: 991px) 768px, 1200px"
+                        alt="Calculadora CO2 MRS"
+                        loading="lazy"
+                        data-aos="zoom-in">
                     <div>
                         <h4 data-aos="fade-up">Calculadora CO2 MRS</h4>
                         <p data-aos="fade-up">Sistema Web / HTML / CSS / Javascript</p>
@@ -61,23 +78,35 @@
                 </article>
                 
                 <article>
-                    <picture>
-                      <source media="(min-width: 1000px)" srcset="./img/projetos/portifolio_fulfilment.png">
-                      <source media="(max-width: 999px)" srcset="./img/projetos/portifolio_fulfilment.png">
-                      <img decoding="async" src="./img/projetos/portifolio_fulfilment.png" loading="lazy" data-aos="zoom-in">
-                    </picture>
+                    <img 
+                        decoding="async"
+                        srcset="
+                              ./img/projetos/portifolio_circo_480.gif 480w, 
+                              ./img/projetos/portifolio_circo_800.gif 800w" 
+                        src="./img/projetos/portifolio_circo_800.gif"
+                        sizes="(max-width: 991px) 480px, 992px"
+                        alt="Hotsite Parque"
+                        loading="lazy"
+                        data-aos="zoom-in">
                     <div>
-                        <h4 data-aos="fade-up">Dashboard Logístico</h4>
-                        <p data-aos="fade-up">Sistema Web / C# </p>
+                        <h4 data-aos="fade-up">Hotsite Espetacular Parque</h4>
+                        <p data-aos="fade-up">Web / Animation / Canvas</p>
                     </div>
                 </article>
                 
                 <article>
-                    <picture>
-                      <source media="(min-width: 1000px)" srcset="./img/projetos/portifolio_abc.png">
-                      <source media="(max-width: 999px)" srcset="./img/projetos/portifolio_abc.png">
-                      <img decoding="async" src="./img/projetos/portifolio_abc.png" loading="lazy" data-aos="zoom-in">
-                    </picture>
+                    <img 
+                        decoding="async"
+                        srcset="
+                              ./img/projetos/portifolio_abc_480.jpg 480w, 
+                              ./img/projetos/portifolio_abc_768.jpg 768w, 
+                              ./img/projetos/portifolio_abc_1024.jpg 1024w"
+                        src="./img/projetos/portifolio_abc_1024.jpg"
+                        sizes="(max-width: 575px) 480px, (max-width: 991px) 768px, 1200px"
+                        alt="Academia Brasileira de Ciências"
+                        loading="lazy"
+                        data-aos="zoom-in">
+                    
                     <div>
                         <h4 data-aos="fade-up">Academia Brasileira de Ciências</h4>
                         <p data-aos="fade-up">Web / Wordpress</p>
@@ -85,37 +114,51 @@
                 </article>
                 
                 <article>
-                    <picture>
-                      <source media="(min-width: 1000px)" srcset="./img/projetos/portifolio_circo.gif">
-                      <source media="(max-width: 999px)" srcset="./img/projetos/portifolio_circo.gif">
-                      <img decoding="async" src="./img/projetos/portifolio_circo.gif"  loading="lazy" data-aos="zoom-in">
-                    </picture>
+                    <img 
+                        decoding="async"
+                        srcset="
+                              ./img/projetos/portifolio_fulfillment_480.jpg 480w, 
+                              ./img/projetos/portifolio_fulfillment_768.jpg 768w, 
+                              ./img/projetos/portifolio_fulfillment_1024.jpg 1024w"
+                        src="./img/projetos/portifolio_fulfillment_1024.jpg"
+                        sizes="(max-width: 575px) 480px, (max-width: 991px) 768px, 1200px"
+                        alt="Dashboard Logístico"
+                        loading="lazy"
+                        data-aos="zoom-in">
                     <div>
-                        <h4 data-aos="fade-up">Hotsite Circo</h4>
-                        <p data-aos="fade-up">Web / Animation / Canvas</p>
+                        <h4 data-aos="fade-up">Dashboard Logístico</h4>
+                        <p data-aos="fade-up">Sistema Web / C# </p>
                     </div>
                 </article>
                 
                 <article>
-                    <picture>
-                      <source media="(min-width: 1000px)" srcset="./img/projetos/portifolio_aventureiras.gif">
-                      <source media="(max-width: 999px)" srcset="./img/projetos/portifolio_aventureiras.gif">
-                      <img decoding="async" src="./img/projetos/portifolio_aventureiras.gif"  loading="lazy" data-aos="zoom-in">
-                    </picture>
+                    <img 
+                        decoding="async"
+                        srcset="
+                              ./img/projetos/portifolio_aventureiras_480.gif 480w, 
+                              ./img/projetos/portifolio_aventureiras_800.gif 800w" 
+                        src="./img/projetos/portifolio_aventureiras_800.gif"
+                        sizes="(max-width: 991px) 480px, 992px"
+                        alt="Hotsite Aventureiras"
+                        loading="lazy"
+                        data-aos="zoom-in">
                     <div>
                         <h4 data-aos="fade-up">Hotsite Aventureiras</h4>
                         <p data-aos="fade-up">Web / Animation / SVG</p>
                     </div>
                 </article>
                 
-                
-                
                 <article>
-                    <picture>
-                      <source media="(min-width: 1000px)" srcset="./img/projetos/portifolio_radio.gif">
-                      <source media="(max-width: 999px)" srcset="./img/projetos/portifolio_radio.gif">
-                      <img decoding="async" src="./img/projetos/portifolio_radio.gif" loading="lazy" data-aos="zoom-in">
-                    </picture>
+                    <img 
+                        decoding="async"
+                        srcset="
+                              ./img/projetos/portifolio_radio_480.gif 480w, 
+                              ./img/projetos/portifolio_radio_800.gif 800w" 
+                        src="./img/projetos/portifolio_radio_800.gif"
+                        sizes="(max-width: 991px) 480px, 992px"
+                        alt="Hotsite Aventureiras"
+                        loading="lazy"
+                        data-aos="zoom-in">
                     <div>
                         <h4 data-aos="fade-up">Aplicação Radio 150 anos</h4>
                         <p data-aos="fade-up">Monogame / Animation / Desktop</p>
@@ -123,17 +166,22 @@
                 </article>
                 
                 <article>
-                    <picture>
-                      <source media="(min-width: 1000px)" srcset="./img/projetos/portifolio_loja_virtual.png">
-                      <source media="(max-width: 999px)" srcset="./img/projetos/portifolio_loja_virtual.png">
-                      <img decoding="async" src="./img/projetos/portifolio_loja_virtual.png" loading="lazy" data-aos="zoom-in">
-                    </picture>
+                    <img 
+                        decoding="async"
+                        srcset="
+                              ./img/projetos/portifolio_webcom_480.jpg 480w, 
+                              ./img/projetos/portifolio_webcom_768.jpg 768w, 
+                              ./img/projetos/portifolio_webcom_1024.jpg 1024w"
+                        src="./img/projetos/portifolio_webcom_1024.jpg"
+                        sizes="(max-width: 575px) 480px, (max-width: 991px) 768px, 1200px"
+                        alt="Sistema de Comissionamento"
+                        loading="lazy"
+                        data-aos="zoom-in">
                     <div>
-                        <h4 data-aos="fade-up">Ecommerce Granado</h4>
-                        <p data-aos="fade-up">Web / C# / Razor</p>
+                        <h4 data-aos="fade-up">Sistema de Comissionamento</h4>
+                        <p data-aos="fade-up">Sistema Web / C# </p>
                     </div>
                 </article>
-                
             </div>
         </section>
         
@@ -143,41 +191,41 @@
             <h2 data-aos="fade-up">Educação</h2>
             
             <div class="g-two-col">
-                <div class="certificates" data-aos="slide-right">
+                <div class="certificates">
                     <div class="icon">
-                        <img src="img/badges/badge_gestao.png" alt="Badge ITIL">
+                        <img src="img/badges/badge_gestao.png" alt="Badge MBA" data-aos="zoom-in">
                     </div>
-                    <div class="content">
+                    <div class="content" data-aos="fade-up">
                         <h4>MBA em Gestão Bancária</h4>
                         <p>Estácio - 2025</p>
                     </div>
                 </div>
 
-                <div class="certificates" data-aos="slide-left">
+                <div class="certificates">
                     <div class="icon">
-                        <img src="img/badges/badge_analise.png" alt="Badge MS">
+                        <img src="img/badges/badge_analise.png" alt="Badge Graduação" data-aos="zoom-in">
                     </div>
-                    <div class="content">
+                    <div class="content" data-aos="fade-up">
                         <h4>Graduação em Análise de Sistemas</h4>
                         <p>Estácio - 2018</p>
                     </div>
                 </div>
 
-                <div class="certificates" data-aos="slide-right">
+                <div class="certificates" >
                     <div class="icon">
-                        <img src="img/badges/badge_ms.png" alt="Badge MS">
+                        <img src="img/badges/badge_ms.png" alt="Badge Microsoft" data-aos="zoom-in">
                     </div>
-                    <div class="content">
+                    <div class="content" data-aos="fade-up">
                         <h4>Microsoft Certified Professional</h4>
                         <p>Microsoft - 2014</p>
                     </div>
                 </div>
 
-                <div class="certificates" data-aos="slide-left">
+                <div class="certificates">
                     <div class="icon">
-                        <img src="img/badges/badge_itil.png" alt="Badge ITIL">
+                        <img src="img/badges/badge_itil.png" alt="Badge ITIL" data-aos="zoom-in">
                     </div>
-                    <div class="content">
+                    <div class="content" data-aos="fade-up">
                         <h4>Certificação ITIL Foundation</h4>
                         <p>Exin - 2010</p>
                     </div>
