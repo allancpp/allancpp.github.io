@@ -6,10 +6,12 @@
         <title>about me</title>
         
         <link rel="stylesheet" type="text/css" href="./css/aos.css">
+        <link rel="stylesheet" type="text/css" href="./css/menu.css">
         <link rel="stylesheet" type="text/css" href="./css/main.css">
         <link rel="stylesheet" type="text/css" href="./css/responsive.css">
         
         <script src="./js/aos.js" defer></script>
+        <script src="./js/nav.js" defer></script>
         <script defer>
             window.addEventListener('load', () => {
                 AOS.init();
@@ -28,13 +30,43 @@
     </head>
     
     <body>
-        <footer>
-            <div class="g-two-col">
-                <div></div>
-                <div></div>
-            </div>
-        </footer>
+
+
+        
+        <header>
+            <nav id="navbar" class="">
+                <ul class="menu">
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#education">Formação</a></li>
+                    <li><a href="#courses">Cursos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+
+                <div class="hamburger-menu">
+                    <input id="menu-toggle" type="checkbox">
+                    <label class="menu-icon" for="menu-toggle">
+                    <span></span>
+                    </label>
+
+                    <ul class="menu-mobile">
+                        <li><a href="#projects">Projetos</a></li>
+                        <li><a href="#education">Formação</a></li>
+                        <li><a href="#courses">Cursos</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                
+            </nav>
+        </header>
+        
         <section class="projects" data-aos="fade-up">
+            <div class="game">
+                <img src="img/projetos/Desktop.png">
+            </div>
+        </section>
+        
+        
+        <section id="projects" class="projects" data-aos="fade-up">
             
             <h2 data-aos="fade-up">Projetos Criados</h2>
 
@@ -186,9 +218,9 @@
         </section>
         
         
-        <section class="education" data-aos="fade-up">
+        <section id="education" class="education" data-aos="fade-up">
             
-            <h2 data-aos="fade-up">Educação</h2>
+            <h2 data-aos="fade-up">Formação e Especialização</h2>
             
             <div class="g-two-col">
                 <div class="certificates">
@@ -268,7 +300,7 @@
             </div>
         </section>
         
-        <section class="courses">
+        <section id="courses" class="courses">
             <h2 data-aos="fade-up">Cursos</h2>
             <p class="subtext" data-aos="fade-up">Cursos de extensão e aprimoramento</p>
             <div class="scroller" data-speed="fast" data-aos="fade-up">
@@ -409,7 +441,7 @@
         
         
         
-        <section class="technologies">
+        <section id="technologies" class="technologies">
             <h2 data-aos="fade-up">Tecnologias</h2>
             <p class="subtext" data-aos="fade-up">Ferramentas, linguagens, conceitos, frameworks, que fazem parte do meu repertório. </p>
 
@@ -439,7 +471,7 @@
         </section>
         
         
-        <footer>
+        <footer id="contact">
             <div class="g-two-col">
                 <div></div>
                 <div></div>

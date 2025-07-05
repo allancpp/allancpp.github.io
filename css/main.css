@@ -9,6 +9,8 @@
     --dark-light-coffee:#a17648;
     
     --border-box-color:1px solid #eee;
+    
+    --dark-navbar:#1c1401;
 }
 
 *
@@ -29,6 +31,7 @@ body
 	font-size: 1.2rem;
 	line-height: 1;
     background:  var(--dark-coffee);
+    background: linear-gradient(0deg,rgba(28, 20, 1, 1) 0%, rgba(54, 39, 2, 1) 72%, rgba(77, 51, 4, 1) 100%);
 }
 
 
@@ -66,6 +69,11 @@ h1, h2, h3, h4, h5, h6, blockquote
 	color: var(--headers-color);
   	font-style: normal;
   	font-weight: 600;
+}
+
+img{
+    width: 100%;
+    height: auto;
 }
 
 ol, ul 
@@ -153,7 +161,7 @@ footer
 {
 	padding: 10vh 10vw;
 	border-top: var(--border-box-color);
-	background: var(--dark-coffee);
+	/*background: var(--dark-coffee);*/
     text-align: center;
 }
 
@@ -198,14 +206,27 @@ footer
 
 .courses-list li 
 {
-    padding: 1rem;
-    font-size: .8em;
+    padding: 1.1rem;
+    font-size: 1rem;
     text-align: center;
     align-content: center;
     max-width: 250px;
+    color: var(--dark-coffee);
+    line-height: 1.2rem;
+    letter-spacing: 1px;
 }
 
+.course-link
+{
+    margin-top: 10px;
+}
 
+.course-link a
+{
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--dark-light-coffee);
+}
 
 
 .projects img{
