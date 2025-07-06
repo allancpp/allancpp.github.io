@@ -7,11 +7,42 @@
         
         <link rel="stylesheet" type="text/css" href="./css/aos.css">
         <link rel="stylesheet" type="text/css" href="./css/menu.css">
+        <link rel="stylesheet" type="text/css" href="./css/interactive.css">
         <link rel="stylesheet" type="text/css" href="./css/main.css">
         <link rel="stylesheet" type="text/css" href="./css/responsive.css">
         
         <script src="./js/aos.js" defer></script>
         <script src="./js/nav.js" defer></script>
+        
+        
+        <script>
+            function selectElement(elementID){
+                let image = document.getElementById(elementID);
+
+                selectedImages = document.getElementById(elementID + "-img");
+                selectedImages.classList.add('hovered');
+            }
+
+            function deselectElement(elementID){
+                selectedImages = document.getElementById(elementID + "-img");
+                selectedImages.classList.remove('hovered');
+            }
+
+            function zoom(elementID){
+                const imagens = document.querySelectorAll('.interactive');
+
+                imagens.forEach(img => {
+                  img.classList.add(elementID + "-zoom");
+                });
+
+                const figurars = document.querySelectorAll('.figura');
+                imagens.forEach(img => {
+                  img.classList.add(elementID + "-zoom");
+                });
+            }
+        </script>
+        
+        
         <script defer>
             window.addEventListener('load', () => {
                 AOS.init();
@@ -59,12 +90,38 @@
             </nav>
         </header>
         
+        <section class="interactive">
+        
+            <div class="container">
+                <img class="interactive" src="./img/interactive/Desktop.jpg" alt="Imagem com figuras">
+                <img class="interactive" src="./img/interactive/mesa.webp" alt="Imagem com figuras">
+                <img class="interactive" id="certifications-clip-img" src="./img/interactive/certificados.webp" alt="Imagem com figuras">
+                <img class="interactive" id="books-clip-img" src="./img/interactive/livros.webp" alt="Imagem com figuras">
+                <img class="interactive" id="computer-clip-img" src="./img/interactive/computador.webp" alt="Imagem com figuras">
+                <img class="interactive" id="companies-clip-img" src="./img/interactive/empresas.webp" alt="Imagem com figuras">
+                <img class="interactive" id="coffee-clip-img" src="./img/interactive/cafe.webp" alt="Imagem com figuras">
+                <img class="interactive" id="picture-clip-img" src="./img/interactive/retrato.webp" alt="Imagem com figuras">
+                <img class="interactive" id="papers-clip-img" src="./img/interactive/papel.webp" alt="Imagem com figuras">
+                <img class="interactive" id="id-clip-img" src="./img/interactive/id.webp" alt="Imagem com figuras">
+
+
+                <div class="figura computer-clip" id="computer-clip" title="Computer" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)" onclick="zoom(this.id)"><div>Trabalhos</div></div>
+                <div class="figura coffee-clip" id="coffee-clip" title="Coffee" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)" onclick="zoom(this.id)"><div>Trabalhos</div></div>
+                <div class="figura books-clip" id="books-clip" title="Books" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)"><div>Trabalhos</div></div>
+                <div class="figura picture-clip" id="picture-clip" title="Picture" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)"><div>Trabalhos</div></div>
+                <div class="figura id-clip" id="id-clip" title="ID" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)"><div>Trabalhos</div></div>
+                <div class="figura papers-clip" id="papers-clip" title="Papers" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)"><div>Trabalhos</div></div>
+                <div class="figura certifications-clip" id="certifications-clip" title="Certifications" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)"><div>Trabalhos</div></div>
+                <div class="figura companies-clip" id="companies-clip" title="Companies" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)"><div>Trabalhos</div></div>
+            </div>
+        </section>
+        <!--
         <section class="projects" data-aos="fade-up">
             <div class="game">
                 <img src="img/projetos/Desktop.png">
             </div>
         </section>
-        
+        -->
         
         <section id="projects" class="projects" data-aos="fade-up">
             
