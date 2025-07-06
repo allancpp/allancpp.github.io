@@ -29,15 +29,17 @@
             }
 
             function zoom(elementID){
+
+
                 const imagens = document.querySelectorAll('.interactive');
 
                 imagens.forEach(img => {
-                  img.classList.add(elementID + "-zoom");
+                  img.classList.toggle(elementID + "-zoom");
                 });
 
-                const figurars = document.querySelectorAll('.figura');
-                imagens.forEach(img => {
-                  img.classList.add(elementID + "-zoom");
+                const figuras = document.querySelectorAll('.figura');
+                figuras.forEach(fig => {
+                  fig.classList.toggle(elementID + "-zoom");
                 });
             }
         </script>
