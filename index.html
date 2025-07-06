@@ -16,6 +16,17 @@
         
         
         <script>
+
+          document.addEventListener("DOMContentLoaded", function () {
+            const figuras = document.querySelectorAll('.figura');
+
+            figuras.forEach(el => {
+              el.addEventListener('mouseover', () => selectElement(el.id));
+              el.addEventListener('mouseout', () => deselectElement(el.id));
+              el.addEventListener('click', () => zoom(el.id));
+            });
+          });
+
             function selectElement(elementID){
                 let image = document.getElementById(elementID);
 
@@ -107,9 +118,9 @@
                 <img class="interactive" id="id-clip-img" src="./img/interactive/id.webp" alt="Imagem com figuras">
 
 
-                <div class="figura computer-clip" id="computer-clip" title="Computer" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)" onclick="zoom(this.id)"><div>Trabalhos</div></div>
-                <div class="figura coffee-clip" id="coffee-clip" title="Coffee" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)" onclick="zoom(this.id)"><div>Trabalhos</div></div>
-                <div class="figura books-clip" id="books-clip" title="Books" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)"><div>Trabalhos</div></div>
+                <div class="figura computer-clip" id="computer-clip" title="Computer"><div>Trabalhos</div></div>
+                <div class="figura coffee-clip" id="coffee-clip" title="Coffee"><div>Trabalhos</div></div>
+                <div class="figura books-clip" id="books-clip" title="Books"><div>Trabalhos</div></div>
                 <div class="figura picture-clip" id="picture-clip" title="Picture" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)"><div>Trabalhos</div></div>
                 <div class="figura id-clip" id="id-clip" title="ID" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)"><div>Trabalhos</div></div>
                 <div class="figura papers-clip" id="papers-clip" title="Papers" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)"><div>Trabalhos</div></div>
@@ -117,13 +128,7 @@
                 <div class="figura companies-clip" id="companies-clip" title="Companies" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)"><div>Trabalhos</div></div>
             </div>
         </section>
-        <!--
-        <section class="projects" data-aos="fade-up">
-            <div class="game">
-                <img src="img/projetos/Desktop.png">
-            </div>
-        </section>
-        -->
+
         
         <section id="projects" class="projects" data-aos="fade-up">
             

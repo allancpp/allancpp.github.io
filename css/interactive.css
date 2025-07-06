@@ -114,3 +114,43 @@
             top: -50%;
             left: -35%;
         }
+
+        .figura.books-clip-zoom,
+        img.books-clip-zoom {
+            width: 215%;
+            left: -13%;
+        }
+
+        .figura.picture-clip-zoom,
+        img.picture-clip-zoom  {
+            width: 120%;
+            width: 250%;
+            left: -140%;
+            top: -85%;
+        }
+
+        .figura.certifications-clip-zoom,
+        img.certifications-clip-zoom {
+            width: 170%;
+            left: -70%;
+        }
+
+        .figura.id-clip-zoom,
+        img.id-clip-zoom {
+            top: -200%;
+            left: -125%;
+            width: 290%;
+        }
+
+        .figura.companies-clip-zoom,
+        img.companies-clip-zoom{
+            top: -90%;
+            width: 180%;
+        }
+
+        .figura.papers-clip-zoom,
+        img.papers-clip-zoom{
+            left: -145%;
+            top: -150%;
+            width: 245%;
+        }
