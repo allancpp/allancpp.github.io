@@ -22,15 +22,18 @@
         
         <script>
 
-          document.addEventListener("DOMContentLoaded", function () {
-            const figuras = document.querySelectorAll('.figura');
-
-            figuras.forEach(el => {
-              el.addEventListener('mouseover', () => selectElement(el.id));
-              el.addEventListener('mouseout', () => deselectElement(el.id));
-              el.addEventListener('click', () => zoom(el.id));
+            document.addEventListener("DOMContentLoaded", function () {
+                const figuras = document.querySelectorAll('.figura');
+                figuras.forEach(el => {
+                    el.addEventListener('mouseover', () => selectElement(el.id));
+                    el.addEventListener('mouseout', () => deselectElement(el.id));
+                    el.addEventListener('click', () => zoom(el.id));
+                });
+                
+                document.getElementById("text-overlay").addEventListener('click',resetFrame);
+                
+                shine();
             });
-          });
 
             function selectElement(elementID){
                 let image = document.getElementById(elementID);
@@ -46,7 +49,6 @@
 
             function zoom(elementID){
 
-
                 const imagens = document.querySelectorAll('.interactive');
 
                 imagens.forEach(img => {
@@ -57,7 +59,88 @@
                 figuras.forEach(fig => {
                   fig.classList.toggle(elementID + "-zoom");
                 });
+                
+                showTypewriterText(elementID);
             }
+            
+            function resetFrame(){
+                clearTimeout(typewriterTimeoutId);
+                document.getElementById("text-overlay").style.display = "none";
+                
+                const elementos = document.querySelectorAll('[class*="-zoom"]');
+                elementos.forEach(el => {
+                  el.classList.forEach(classe => {
+                    if (classe.endsWith('-zoom')) {
+                      el.classList.remove(classe);
+                    }
+                  });
+                });
+            }
+            
+            function showTypewriterText(elementID){
+                document.getElementById("text-overlay").style.display = "inline-block";
+                typewriter(textMap.get(elementID));
+            }
+
+            const textMap = new Map();
+            textMap.set("computer-clip","Experiência na criação de APIs, desenvolvimento de hotsites voltados à presença digital e construção de arquiteturas de sistemas complexos, com integrações a ERPs e Data Warehouses. Soluções entregues com eficiência e aderência aos desafios específicos de cada projeto.");
+            textMap.set("coffee-clip","Que tal um café?\nEntre em contato através de:\nLinkedin\nInstagram");
+            textMap.set("picture-clip","Na minha vida pessoal, sou leitor ávido, apreciador de café forte e de boas ideias.");
+            textMap.set("companies-clip","Acumulei experiência atuando em projetos estratégicos para empresas como Globo, Embratel, GVT, HP, EDS, Granado, entre outras referências do setor.");
+            textMap.set("id-clip","Prazer, sou Allan Ferreira\nDesenvolvedor full stack com mais de 15 anos de experiência, combinando visão de negócio, domínio técnico e criatividade. \n\nVamos transformar ideias em soluções?");
+            textMap.set("papers-clip","Sou movido por desafios e pela oportunidade de transformar ideias em soluções reais. Valorizo o aprendizado contínuo, boas conversas e ambientes colaborativos. Acredito que a tecnologia, aliada à empatia e ao entendimento do negócio, pode gerar impactos significativos.");
+            textMap.set("books-clip","Acredito no aprendizado como um processo contínuo. Ao longo da minha trajetória, concluí diversos cursos e mergulhei em livros que contribuíram significativamente para meu desenvolvimento técnico, criativo e estratégico.");
+            textMap.set("certifications-clip","Acredito que a tecnologia só entrega valor quando alinhada ao entendimento do negócio. Por isso, além de evoluir tecnicamente, busco sempre compreender os desafios estratégicos, unindo visão analítica e expertise para desenvolver soluções mais relevantes.");
+
+            let typewriterTimeoutId;
+            
+            //TYPEWRITER
+            function typewriter(textToType, elementId = "typedtext", speed = 50, scrollAt = 20) {
+                const aText = textToType.split("\n");
+                let iIndex = 0;
+                let iTextPos = 0;
+                let sContents = '';
+                let iRow;
+
+                function type() {
+                    sContents = '';
+                    iRow = Math.max(0, iIndex - scrollAt);
+                    const destination = document.getElementById(elementId);
+
+                    while (iRow < iIndex) {
+                        sContents += aText[iRow++] + '<br />';
+                    }
+
+                    destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+
+                    if (iTextPos++ === aText[iIndex].length) {
+                        iTextPos = 0;
+                        iIndex++;
+                        if (iIndex < aText.length) {
+                            typewriterTimeoutId = setTimeout(type, 500);
+                        }
+                    } else {
+                        typewriterTimeoutId = setTimeout(type, speed);
+                    }
+                }
+
+                type();
+            }
+            
+            function shine(){
+                const images = document.querySelectorAll('img.interactive');
+
+                images.forEach((img, index) => {
+                    setTimeout(() => {
+                        img.classList.add('hovered');
+
+                        setTimeout(() => {
+                            img.classList.remove('hovered');
+                        }, 300);
+                    }, index * 500);
+                });
+            }
+            
         </script>
         
         
@@ -80,8 +163,6 @@
     
     <body>
 
-
-        
         <header>
             <nav id="navbar" class="">
                 <ul class="menu">
@@ -104,13 +185,11 @@
                         <li><a href="#contact">Contato</a></li>
                     </ul>
                 </div>
-                
             </nav>
         </header>
         
         <section class="interactive">
-        
-            <div class="container blur">
+            <div class="container">
                 <img class="interactive" src="./img/interactive/Desktop.jpg" alt="Imagem com figuras">
                 <img class="interactive" src="./img/interactive/mesa.webp" alt="Imagem com figuras">
                 <img class="interactive" id="certifications-clip-img" src="./img/interactive/certificados.webp" alt="Imagem com figuras">
@@ -123,17 +202,16 @@
                 <img class="interactive" id="id-clip-img" src="./img/interactive/id.webp" alt="Imagem com figuras">
 
 
-                <div class="figura computer-clip" id="computer-clip" title="Computer"><div>Trabalhos</div></div>
-                <div class="figura coffee-clip" id="coffee-clip" title="Coffee"><div>Trabalhos</div></div>
-                <div class="figura books-clip" id="books-clip" title="Books"><div>Trabalhos</div></div>
-                <div class="figura picture-clip" id="picture-clip" title="Picture" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)"><div>Trabalhos</div></div>
-                <div class="figura id-clip" id="id-clip" title="ID" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)"><div>Trabalhos</div></div>
-                <div class="figura papers-clip" id="papers-clip" title="Papers" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)"><div>Trabalhos</div></div>
-                <div class="figura certifications-clip" id="certifications-clip" title="Certifications" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)"><div>Trabalhos</div></div>
-                <div class="figura companies-clip" id="companies-clip" title="Companies" onmouseover="selectElement(this.id)" onmouseout="deselectElement(this.id)"><div>Trabalhos</div></div>
-                <div class="text">
-                    <p>
-                        Criação de APIs, desenvolvimento de hotsites para fixação da marca, arquitetura de sistemas completos com integrações a ERPs e DataWarehouse, variadas soluções entregues, para os mais diversos desafios. 
+                <div class="figura computer-clip" id="computer-clip" title="Computer"></div>
+                <div class="figura coffee-clip" id="coffee-clip" title="Coffee"></div>
+                <div class="figura books-clip" id="books-clip" title="Books"></div>
+                <div class="figura picture-clip" id="picture-clip" title="Picture"></div>
+                <div class="figura id-clip" id="id-clip" title="ID"></div>
+                <div class="figura papers-clip" id="papers-clip" title="Papers"></div>
+                <div class="figura certifications-clip" id="certifications-clip" title="Certifications"></div>
+                <div class="figura companies-clip" id="companies-clip" title="Companies"></div>
+                <div id="text-overlay" class="text">
+                    <p id="typedtext">
                     </p>
                 </div>
             </div>
@@ -514,8 +592,6 @@
         </section>
         
         
-        
-        
         <section id="technologies" class="technologies">
             <h2 data-aos="fade-up">Stack de Tecnologias</h2>
             <p class="subtext" data-aos="fade-up">Experiência do back ao front, cobrindo todo o ciclo de desenvolvimento de software.</p>
@@ -544,10 +620,6 @@
                 </div>
             </div>
         </section>
-        
-        
-        
-         
         
         
        <section id="contact" class="contact">
@@ -579,29 +651,10 @@
             </ul>
             
         </section>
+        
         <footer>
-        <p class="footertext">Copyright© Allan Ferreira 2025</p>
+            <p class="footertext">Copyright© Allan Ferreira 2025</p>
         </footer>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
     </body>
 </html>

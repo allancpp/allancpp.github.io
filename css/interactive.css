@@ -1,13 +1,18 @@
-section.interactive .text{
-    display: inline-block;
+
+section.interactive .text {
+    display: none;
     position: absolute;
     width: 100%;
     height: auto;
     aspect-ratio: 3 / 2;
-    background-color: aliceblue;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(28, 20, 1, 0.8);;
+    color: var(--headers-color);
+    padding: 4rem;
+    font-size: 3rem;
+    line-height: 4rem;
+    font-size: clamp(1.4rem, 4vw, 3rem);
+    text-align: center;
 }
-
 
 .figura div{
     display: none;
@@ -28,15 +33,6 @@ section.interactive .text{
     display: block;
 }
 
-section.interactive .container.blur:before{
-    content: "";
-    position: absolute;
-    background-color: rgba(0,0,0,0.4);
-    width: 100%;
-    height: auto;
-    aspect-ratio: 3 / 2;
-    filter: blur(10px);
-}
       
 section.interactive .container {
     position: relative;
