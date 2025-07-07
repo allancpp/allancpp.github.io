@@ -154,6 +154,7 @@ section.interactive{
 
 
 
+
 section.projects,
 section.education,
 section.idioms,
@@ -245,7 +246,7 @@ footer
 
 .languages,
 .certificates {
-    margin-top: 5rem;
+    margin-top: 1rem;
 }
 
 .certificates .icon img {

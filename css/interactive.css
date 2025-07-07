@@ -1,156 +1,178 @@
+section.interactive .text{
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    background-color: aliceblue;
+    background-color: rgba(0,0,0,0.4);
+}
+
+
 .figura div{
-          display: none;
-      }
+    display: none;
+}
 
-    .figura {
-        position: absolute;
-        width: 100%;
-        height: auto;
-        top: 0%;
-        left: 0%;
-        cursor: pointer;
-        transition: box-shadow 0.3s ease;
-        aspect-ratio: 3 / 2;
-    }
+.figura {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0%;
+    left: 0%;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    aspect-ratio: 3 / 2;
+}
         
-    .figura:hover > div{
+.figura:hover > div{
     display: block;
-    }
+}
+
+section.interactive .container.blur:before{
+    content: "";
+    position: absolute;
+    background-color: rgba(0,0,0,0.4);
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    filter: blur(10px);
+}
       
-    .container {
-        position: relative;
-        aspect-ratio: 3 / 2;
-        width: 100%;
-        height: auto;
-        overflow: hidden;
-    }
+section.interactive .container {
+    position: relative;
+    aspect-ratio: 3 / 2;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    max-width: 1024px;
+    margin: auto;
+}
 
-    .container img {
-        position: absolute;
-        width: 100%;
-        height: auto;
-        display: block;
-        transition: all 0.5s ease-out;
-        top:0;
-        left: 0;
-    }
-     
+.container img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: all 0.5s ease-out;
+    top:0;
+    left: 0;
+}   
 
-    img.hovered{
-        filter: drop-shadow(0 0 10px rgba(255, 255, 100, 1));
-    }
+img.hovered{
+    filter: drop-shadow(0 0 10px rgba(255, 255, 100, 1));
+}
         
-        .coffee-clip
-        {
-            clip-path: polygon(9% 64%, 13% 71%, 21% 71%, 23% 64%, 22% 51%, 14% 51%, 9% 57%);
-        }
-        
-        .id-clip{
-            clip-path: polygon(52% 80%, 53% 91%, 68% 91%, 65% 80%);
-        }
-        
-        .books-clip{
-            clip-path: polygon(52% 18%, 6% 18%, 6% 0, 52% 0);
-        }
-        
-        .papers-clip{
-            clip-path: polygon(68% 73%, 74% 94%, 91% 94%, 91% 91%, 96% 91%, 87% 70%, 71% 70%);
-        }
-        
-        .picture-clip{
-            clip-path: polygon(68% 68%, 80% 70%, 85% 66%, 82% 56%, 83% 46%, 71% 45%);
-        }
-        
-        .certifications-clip{
-            clip-path: polygon(55% 2%, 70% 2%, 73% 5%, 89% 5%, 87% 42%, 62% 42%, 62% 30%, 58% 29%, 57% 24%, 55% 21%);
-        }
-        
-        .degree1-clip{
-            clip-path: polygon(55% 2%, 70% 2%, 70% 22%, 55% 22%);
-        }
-        
-        .degree2-clip{
-            clip-path: polygon(74% 4%, 74% 23%, 90% 23%, 90% 4%);
-        }
-        
-        .degree3-clip{
-            clip-path: polygon(57% 24%, 70% 24%, 70% 41%, 62% 41%, 62% 30%, 57% 30%);
-        }
-        
-        .degree4-clip{
-            clip-path: polygon(75% 27%, 86% 27%, 86% 41%, 75% 41%);
-        }
-        
-        .companies-clip{
-            clip-path: polygon(7% 86%, 27% 77%, 30% 84%, 35% 84%, 42% 80%, 48% 88%, 41% 93%, 35% 93%, 32% 93%, 28% 89%, 21% 91%, 11% 95%);
-        }
-        
-        .company1-clip{
-            clip-path: polygon(7% 85%, 11% 95%, 20% 90%, 16% 82%);
-        }
-        
-        .company2-clip{
-            clip-path: polygon(17% 82%, 22% 92%, 32% 86%, 27% 77%);
-        }
-        
-        .company3-clip{
-            clip-path: polygon(35% 85%, 40% 93%, 46% 88%, 42% 81%);
-        }
-        
-        .computer-clip {
-            
-            clip-path: polygon(26% 76%, 66% 75%, 61% 59%, 61% 30%, 32% 30%, 32% 58%);
-        }
-        
-        .figura.coffee-clip-zoom,
-        img.coffee-clip-zoom {
-            width: 280%;
-            top: -130%;
-        }
-        
-        .figura.computer-clip-zoom,
-        img.computer-clip-zoom {
-            width: 180%;
-            top: -50%;
-            left: -35%;
-        }
+.coffee-clip
+{
+    clip-path: polygon(9% 64%, 13% 71%, 21% 71%, 23% 64%, 22% 51%, 14% 51%, 9% 57%);
+}
 
-        .figura.books-clip-zoom,
-        img.books-clip-zoom {
-            width: 215%;
-            left: -13%;
-        }
+.id-clip{
+    clip-path: polygon(52% 80%, 53% 91%, 68% 91%, 65% 80%);
+}
 
-        .figura.picture-clip-zoom,
-        img.picture-clip-zoom  {
-            width: 120%;
-            width: 250%;
-            left: -140%;
-            top: -85%;
-        }
+.books-clip{
+    clip-path: polygon(52% 18%, 6% 18%, 6% 0, 52% 0);
+}
 
-        .figura.certifications-clip-zoom,
-        img.certifications-clip-zoom {
-            width: 170%;
-            left: -70%;
-        }
+.papers-clip{
+    clip-path: polygon(68% 73%, 74% 94%, 91% 94%, 91% 91%, 96% 91%, 87% 70%, 71% 70%);
+}
 
-        .figura.id-clip-zoom,
-        img.id-clip-zoom {
-            top: -200%;
-            left: -125%;
-            width: 290%;
-        }
+.picture-clip{
+    clip-path: polygon(68% 68%, 80% 70%, 85% 66%, 82% 56%, 83% 46%, 71% 45%);
+}
 
-        .figura.companies-clip-zoom,
-        img.companies-clip-zoom{
-            top: -90%;
-            width: 180%;
-        }
+.certifications-clip{
+    clip-path: polygon(55% 2%, 70% 2%, 73% 5%, 89% 5%, 87% 42%, 62% 42%, 62% 30%, 58% 29%, 57% 24%, 55% 21%);
+}
 
-        .figura.papers-clip-zoom,
-        img.papers-clip-zoom{
-            left: -145%;
-            top: -150%;
-            width: 245%;
-        }
+.degree1-clip{
+    clip-path: polygon(55% 2%, 70% 2%, 70% 22%, 55% 22%);
+}
+
+.degree2-clip{
+    clip-path: polygon(74% 4%, 74% 23%, 90% 23%, 90% 4%);
+}
+
+.degree3-clip{
+    clip-path: polygon(57% 24%, 70% 24%, 70% 41%, 62% 41%, 62% 30%, 57% 30%);
+}
+
+.degree4-clip{
+    clip-path: polygon(75% 27%, 86% 27%, 86% 41%, 75% 41%);
+}
+
+.companies-clip{
+    clip-path: polygon(7% 86%, 27% 77%, 30% 84%, 35% 84%, 42% 80%, 48% 88%, 41% 93%, 35% 93%, 32% 93%, 28% 89%, 21% 91%, 11% 95%);
+}
+
+.company1-clip{
+    clip-path: polygon(7% 85%, 11% 95%, 20% 90%, 16% 82%);
+}
+
+.company2-clip{
+    clip-path: polygon(17% 82%, 22% 92%, 32% 86%, 27% 77%);
+}
+
+.company3-clip{
+    clip-path: polygon(35% 85%, 40% 93%, 46% 88%, 42% 81%);
+}
+
+.computer-clip {
+
+    clip-path: polygon(26% 76%, 66% 75%, 61% 59%, 61% 30%, 32% 30%, 32% 58%);
+}
+
+.figura.coffee-clip-zoom,
+img.coffee-clip-zoom {
+    width: 280%;
+    top: -130%;
+}
+
+.figura.computer-clip-zoom,
+img.computer-clip-zoom {
+    width: 180%;
+    top: -50%;
+    left: -35%;
+}
+
+.figura.books-clip-zoom,
+img.books-clip-zoom {
+    width: 215%;
+    left: -13%;
+}
+
+.figura.picture-clip-zoom,
+img.picture-clip-zoom  {
+    width: 120%;
+    width: 250%;
+    left: -140%;
+    top: -85%;
+}
+
+.figura.certifications-clip-zoom,
+img.certifications-clip-zoom {
+    width: 170%;
+    left: -70%;
+}
+
+.figura.id-clip-zoom,
+img.id-clip-zoom {
+    top: -200%;
+    left: -125%;
+    width: 290%;
+}
+
+.figura.companies-clip-zoom,
+img.companies-clip-zoom{
+    top: -90%;
+    width: 180%;
+}
+
+.figura.papers-clip-zoom,
+img.papers-clip-zoom{
+    left: -145%;
+    top: -150%;
+    width: 245%;
+}
