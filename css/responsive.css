@@ -28,9 +28,9 @@
     }
     
     section.interactive .text {
-        padding: 3rem;
+        padding: 1rem;
         font-size: 1.4rem;
-        line-height: 2.5rem;
+        line-height: 2rem;
         text-align: center;
     }
 
