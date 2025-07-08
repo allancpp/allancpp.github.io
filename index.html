@@ -16,139 +16,10 @@
         <link rel="stylesheet" type="text/css" href="./css/main.css">
         <link rel="stylesheet" type="text/css" href="./css/responsive.css">
         
+        <script src="./js/i18n.js" defer></script>
         <script src="./js/aos.js" defer></script>
         <script src="./js/nav.js" defer></script>
-        
-        
-        <script>
-
-            document.addEventListener("DOMContentLoaded", function () {
-                const figuras = document.querySelectorAll('.figura');
-                figuras.forEach(el => {
-                    el.addEventListener('mouseover', () => selectElement(el.id));
-                    el.addEventListener('mouseout', () => deselectElement(el.id));
-                    el.addEventListener('click', () => zoom(el.id));
-                });
-                
-                document.getElementById("text-overlay").addEventListener('click',resetFrame);
-                
-                shine();
-            });
-
-            function selectElement(elementID){
-                let image = document.getElementById(elementID);
-
-                selectedImages = document.getElementById(elementID + "-img");
-                selectedImages.classList.add('hovered');
-            }
-
-            function deselectElement(elementID){
-                selectedImages = document.getElementById(elementID + "-img");
-                selectedImages.classList.remove('hovered');
-            }
-
-            function zoom(elementID){
-
-                const imagens = document.querySelectorAll('.interactive');
-
-                imagens.forEach(img => {
-                  img.classList.toggle(elementID + "-zoom");
-                });
-
-                const figuras = document.querySelectorAll('.figura');
-                figuras.forEach(fig => {
-                  fig.classList.toggle(elementID + "-zoom");
-                });
-                
-                showTypewriterText(elementID);
-            }
-            
-            function resetFrame(){
-                clearTimeout(typewriterTimeoutId);
-                document.getElementById("text-overlay").style.display = "none";
-                
-                const elementos = document.querySelectorAll('[class*="-zoom"]');
-                elementos.forEach(el => {
-                  el.classList.forEach(classe => {
-                    if (classe.endsWith('-zoom')) {
-                      el.classList.remove(classe);
-                    }
-                  });
-                });
-            }
-            
-            function showTypewriterText(elementID){
-                document.getElementById("text-overlay").style.display = "inline-block";
-                typewriter(textMap.get(elementID));
-            }
-
-            const textMap = new Map();
-            textMap.set("computer-clip","Experiência na criação de APIs, desenvolvimento de hotsites voltados à presença digital e construção de arquiteturas de sistemas complexos, com integrações a ERPs e Data Warehouses. Soluções entregues com eficiência e aderência aos desafios específicos de cada projeto.");
-            textMap.set("coffee-clip","Que tal um café?\nEntre em contato através de:\n\nhttps://www.linkedin.com/in/allancarvalho/\nhttps://instagram.com/allancpp");
-            textMap.set("picture-clip","Na minha vida pessoal, sou leitor ávido, apreciador de café forte e de boas ideias.");
-            textMap.set("companies-clip","Acumulei experiência atuando em projetos estratégicos para empresas como Globo, Embratel, GVT, HP, EDS, Granado, entre outras referências do setor.");
-            textMap.set("id-clip","Prazer, sou Allan Ferreira\nDesenvolvedor full stack com mais de 15 anos de experiência, combinando visão de negócio, domínio técnico e criatividade. \n\nVamos transformar ideias em soluções?");
-            textMap.set("papers-clip","Sou movido por desafios e pela oportunidade de transformar ideias em soluções reais. Valorizo o aprendizado contínuo, boas conversas e ambientes colaborativos. Acredito que a tecnologia, aliada à empatia e ao entendimento do negócio, pode gerar impactos significativos.");
-            textMap.set("books-clip","Acredito no aprendizado como um processo contínuo. Ao longo da minha trajetória, concluí diversos cursos e mergulhei em livros que contribuíram significativamente para meu desenvolvimento técnico, criativo e estratégico.");
-            textMap.set("certifications-clip","Acredito que a tecnologia só entrega valor quando alinhada ao entendimento do negócio. Por isso, além de evoluir tecnicamente, busco sempre compreender os desafios estratégicos, unindo visão analítica e expertise para desenvolver soluções mais relevantes.");
-
-            let typewriterTimeoutId;
-            
-            //TYPEWRITER
-            function typewriter(textToType, elementId = "typedtext", speed = 50, scrollAt = 20) {
-                const aText = textToType.split("\n");
-                let iIndex = 0;
-                let iTextPos = 0;
-                let sContents = '';
-                let iRow;
-
-                function type() {
-                    sContents = '';
-                    iRow = Math.max(0, iIndex - scrollAt);
-                    const destination = document.getElementById(elementId);
-
-                    while (iRow < iIndex) {
-                        sContents += aText[iRow++] + '<br />';
-                    }
-
-                    destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
-
-                    if (iTextPos++ === aText[iIndex].length) {
-                        iTextPos = 0;
-                        iIndex++;
-                        if (iIndex < aText.length) {
-                            typewriterTimeoutId = setTimeout(type, 500);
-                        }
-                    } else {
-                        typewriterTimeoutId = setTimeout(type, speed);
-                    }
-                }
-
-                type();
-            }
-            
-            function shine(){
-                const images = document.querySelectorAll('img.interactive');
-
-                images.forEach((img, index) => {
-                    setTimeout(() => {
-                        img.classList.add('hovered');
-
-                        setTimeout(() => {
-                            img.classList.remove('hovered');
-                        }, 300);
-                    }, index * 500);
-                });
-            }
-            
-        </script>
-        
-        
-        <script defer>
-            window.addEventListener('load', () => {
-                AOS.init();
-            });
-        </script>
+        <script src="./js/main.js" defer></script>
         
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFZ42YS34K"></script>
@@ -161,15 +32,19 @@
         </script>
     </head>
     
-    <body>
+    <body class="pt">
 
         <header>
             <nav id="navbar" class="">
                 <ul class="menu">
-                    <li><a href="#projects">Projetos</a></li>
-                    <li><a href="#education">Formação</a></li>
-                    <li><a href="#courses">Cursos</a></li>
-                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="#projects" data-i18n="menu.projects"></a></li>
+                    <li><a href="#education" data-i18n="menu.education"></a></li>
+                    <li><a href="#courses" data-i18n="menu.courses"></a></li>
+                    <li><a href="#contact" data-i18n="menu.contact"></a></li>
+                    <li>
+                        <a onclick="loadLanguage('en');"><img src="./img/flags/us.svg" alt="flag us"></a>
+                        <a onclick="loadLanguage('pt');"><img src="./img/flags/br.svg" alt="flag pt"></a>
+                    </li>
                 </ul>
 
                 <div class="hamburger-menu">
@@ -179,10 +54,14 @@
                     </label>
 
                     <ul class="menu-mobile">
-                        <li><a href="#projects">Projetos</a></li>
-                        <li><a href="#education">Formação</a></li>
-                        <li><a href="#courses">Cursos</a></li>
-                        <li><a href="#contact">Contato</a></li>
+                        <li><a href="#projects" data-i18n="menu.projects"></a></li>
+                        <li><a href="#education" data-i18n="menu.education"></a></li>
+                        <li><a href="#courses" data-i18n="menu.courses"></a></li>
+                        <li><a href="#contact" data-i18n="menu.contact"></a></li>
+                        <li>
+                            <a onclick="loadLanguage('en');"><img src="./img/flags/us.svg" alt="flag us"></a>
+                            <a onclick="loadLanguage('pt');"><img src="./img/flags/br.svg" alt="flag pt"></a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -220,9 +99,9 @@
         
         <section id="projects" class="projects" data-aos="fade-up">
             
-            <h2 data-aos="fade-up">Portfólio de Projetos</h2>
+            <h2 data-aos="fade-up" data-i18n="header.projects"></h2>
 
-            <p class="subtext" data-aos="fade-up">Ao longo de mais de 15 anos de carreira, participei ativamente da concepção, desenvolvimento e evolução de sistemas para empresas de diversos setores.</p>
+            <p class="subtext" data-aos="fade-up" data-i18n="sub.projects"></p>
             
             <div class="g-two-col">
                 <article>
@@ -372,8 +251,8 @@
         
         <section id="education" class="education" data-aos="fade-up">
             
-            <h2 data-aos="fade-up">Formação e Certificações</h2>
-            <p class="subtext" data-aos="fade-up">Capacitações estratégicas e técnicas, aliando visão de negócios a domínio de ferramentas e frameworks consolidados no mercado.</p>
+            <h2 data-aos="fade-up" data-i18n="header.education"></h2>
+            <p class="subtext" data-aos="fade-up" data-i18n="sub.education"></p>
             
             <div class="g-two-col">
                 <div class="certificates">
@@ -419,11 +298,11 @@
         </section>
         
         <section class="idioms" data-aos="fade-up">
-            <h2 data-aos="fade-up">Idiomas</h2>
+            <h2 data-aos="fade-up" data-i18n="header.idioms"></h2>
             <div class="g-three-col">
                 <div class="languages" data-aos="fade-up">
                     <div class="flag">
-                        <img src="./img/flags/br.svg" alt="Badge ITIL">
+                        <img src="./img/flags/br.svg" alt="flag pt">
                     </div>
                     <div class="content">
                         <h4>Português</h4>
@@ -433,7 +312,7 @@
 
                 <div class="languages" data-aos="fade-up">
                     <div class="flag">
-                        <img src="./img/flags/us.svg" alt="Badge ITIL">
+                        <img src="./img/flags/us.svg" alt="flag us">
                     </div>
                     <div class="content">
                         <h4>Inglês</h4>
@@ -443,7 +322,7 @@
 
                 <div class="languages" data-aos="fade-up">
                     <div class="flag">
-                        <img src="./img/flags/jp.svg" alt="Badge ITIL">
+                        <img src="./img/flags/jp.svg" alt="flag jp">
                     </div>
                     <div class="content">
                         <h4>Japonês</h4>
@@ -454,8 +333,8 @@
         </section>
         
         <section id="courses" class="courses">
-            <h2 data-aos="fade-up">Capacitações Complementares</h2>
-            <p class="subtext" data-aos="fade-up">Atualizações regulares por meio de plataformas especializadas, com foco em aprofundar habilidades e expandir horizontes profissionais.</p>
+            <h2 data-aos="fade-up" data-i18n="header.courses"></h2>
+            <p class="subtext" data-aos="fade-up" data-i18n="sub.courses"></p>
             <div class="scroller" data-speed="fast" data-aos="fade-up">
                 <ul class="courses-list scroller-right">
                     <li>
@@ -593,8 +472,8 @@
         
         
         <section id="technologies" class="technologies">
-            <h2 data-aos="fade-up">Stack de Tecnologias</h2>
-            <p class="subtext" data-aos="fade-up">Experiência do back ao front, cobrindo todo o ciclo de desenvolvimento de software.</p>
+            <h2 data-aos="fade-up" data-i18n="header.technologies"></h2>
+            <p class="subtext" data-aos="fade-up" data-i18n="sub.technologies"></p>
 
             <div class="scroller" data-speed="slow" data-aos="fade-up">
                 <div class="scroller-right">
@@ -623,8 +502,8 @@
         
         
        <section id="contact" class="contact">
-           <h2 data-aos="fade-up" class="aos-init aos-animate">Contato</h2>
-           <p class="subtext aos-init aos-animate" data-aos="fade-up">Onde me encontrar</p>
+           <h2 data-aos="fade-up" data-i18n="header.contact"></h2>
+           <p class="subtext" data-aos="fade-up" data-i18n="sub.contact"></p>
            <ul class="social-media">
                <li data-aos="fade-up">
                     <a href="https://www.linkedin.com/in/allancarvalho/">
