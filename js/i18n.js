@@ -6,7 +6,7 @@ var ptI18N={
     "menu.courses":"Cursos",
     "menu.contact":"Contato",
     
-    "languages.english": "Ingês",
+    "languages.english": "Inglês",
     "languages.portuguese": "Português",
     "languages.japanese": "Japonês",
     
