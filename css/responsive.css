@@ -33,7 +33,7 @@
         line-height: 2rem;
         text-align: center;
     }
-    
+    /*Increased flag size*/
     #navbar ul li a img {
         vertical-align: middle;
         width: 50px;
