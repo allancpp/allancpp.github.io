@@ -33,6 +33,16 @@
         line-height: 2rem;
         text-align: center;
     }
+    
+    #navbar ul li a img {
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+    }
+    .menu-mobile li:last-child {
+        padding-left: 0px;
+    }
 
 }
 @media (min-width: 576px) and (max-width: 767.98px)
@@ -55,6 +65,16 @@
     
     #text-overlay {
         line-height: 2.5rem;
+    }
+    
+    #navbar ul li a img {
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+    }
+    .menu-mobile li:last-child {
+        padding-left: 0px;
     }
 }
 @media (min-width: 768px) and (max-width: 991.98px)
