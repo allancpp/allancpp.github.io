@@ -6,6 +6,19 @@ var ptI18N={
     "menu.courses":"Cursos",
     "menu.contact":"Contato",
     
+    "languages.english": "Ingês",
+    "languages.portuguese": "Português",
+    "languages.japanese": "Japonês",
+    
+    "languages.english.proficiency":"Fluente",
+    "languages.portuguese.proficiency":"Nativo",
+    "languages.japanese.proficiency":"Básico",
+    
+    "education.mba":"MBA em Gestão Bancária",
+    "education.degree":"Graduação em Análise de Sistemas",
+    "education.itil":"Certificação ITIL Foundation",
+    "education.microsoft":"Microsoft Certified Professional",
+    
     "header.projects": "Portfólio de Projetos",
     "sub.projects":"Ao longo de mais de 15 anos de carreira, participei ativamente da concepção, desenvolvimento e evolução de sistemas para empresas de diversos setores.",
     
@@ -21,8 +34,8 @@ var ptI18N={
     "header.technologies": "Stack de Tecnologias",
     "sub.technologies": "Experiência do back ao front, cobrindo todo o ciclo de desenvolvimento de software.",
     
-    "header.contact": "Stack de Tecnologias",
-    "sub.contact": "Experiência do back ao front, cobrindo todo o ciclo de desenvolvimento de software.",
+    "header.contact": "Contato",
+    "sub.contact": "Onde me encontrar",
     
     "computer-clip":"Experiência na criação de APIs, desenvolvimento de hotsites voltados à presença digital e construção de arquiteturas de sistemas complexos, com integrações a ERPs e Data Warehouses. Soluções entregues com eficiência e aderência aos desafios específicos de cada projeto.",
     
@@ -46,6 +59,19 @@ var enI18N = {
     "menu.education": "Education",
     "menu.courses": "Courses",
     "menu.contact": "Contact",
+    
+    "languages.english": "English",
+    "languages.portuguese": "Portuguese",
+    "languages.japanese": "Japanese",
+    
+    "languages.english.proficiency":"C2 Proficient",
+    "languages.portuguese.proficiency":"Native",
+    "languages.japanese.proficiency":"Basic",
+    
+    "education.mba":"MBA in Banking Management",
+    "education.degree":"Degree in Systems Analysis",
+    "education.itil":"ITL Foundation Certification",
+    "education.microsoft":"Microsoft Certified Professional",
 
     "header.projects": "Project Portfolio",
     "sub.projects": "With over 15 years of experience, I have actively contributed to the design, development, and evolution of systems for companies across various industries.",
